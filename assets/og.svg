@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f4ef"/>
+  <rect x="44" y="44" width="1112" height="542" fill="#fbfaf6" stroke="#b4b0a4"/>
+  <rect x="82" y="82" width="44" height="44" fill="#171715"/>
+  <text x="98" y="112" font-family="monospace" font-size="18" fill="#f5f4ef">L</text>
+  <text x="146" y="113" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#171715">LooPROOF</text>
+  <text x="82" y="255" font-family="Arial, sans-serif" font-weight="700" font-size="82" letter-spacing="-4" fill="#171715">Product truth,</text>
+  <text x="82" y="340" font-family="Arial, sans-serif" font-weight="700" font-size="82" letter-spacing="-4" fill="#171715">callable by agents.</text>
+  <text x="86" y="395" font-family="Arial, sans-serif" font-size="24" fill="#6e6d66">Trace evidence · Stage resolution · Verify without overclaiming</text>
+  <line x1="86" y1="473" x2="1110" y2="473" stroke="#d7d4c9"/>
+  <circle cx="110" cy="520" r="8" fill="#c63d2e"/>
+  <line x1="118" y1="520" x2="360" y2="520" stroke="#c63d2e" stroke-width="2"/>
+  <circle cx="372" cy="520" r="8" fill="#26745b"/>
+  <line x1="380" y1="520" x2="620" y2="520" stroke="#26745b" stroke-width="2"/>
+  <circle cx="632" cy="520" r="8" fill="#245fdb"/>
+  <text x="670" y="528" font-family="monospace" font-size="18" fill="#171715">document.modelContext.registerTool()</text>
+</svg>
