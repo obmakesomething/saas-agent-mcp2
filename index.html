@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta
+      name="description"
+      content="LooPROOF exposes product truth as WebMCP tools so humans and agents can inspect claims, trace evidence, stage resolutions, and verify consistency together."
+    />
+    <meta property="og:title" content="LooPROOF — Product truth, callable by agents" />
+    <meta
+      property="og:description"
+      content="A WebMCP-native proof surface for enterprise product claims."
+    />
+    <meta property="og:image" content="/assets/og.svg" />
+    <title>LooPROOF — WebMCP Product Truth</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      // Deterministic browser smoke-test shim. It is activated only with
+      // ?webmcp-test=1 and never replaces a native WebMCP implementation.
+      if (
+        new URLSearchParams(location.search).get("webmcp-test") === "1" &&
+        !("modelContext" in document)
+      ) {
+        const registry = new Map();
+        Object.defineProperty(document, "modelContext", {
+          configurable: true,
+          value: {
+            registerTool(tool, options = {}) {
+              registry.set(tool.name, tool);
+              options.signal?.addEventListener(
+                "abort",
+                () => registry.delete(tool.name),
+                { once: true },
+              );
+            },
+            async getTools() {
+              return [...registry.values()];
+            },
+            async executeTool(toolOrName, args = {}) {
+              const name = typeof toolOrName === "string" ? toolOrName : toolOrName.name;
+              const tool = registry.get(name);
+              if (!tool) throw new Error(`Unknown test tool: ${name}`);
+              return tool.execute(args);
+            },
+          },
+        });
+        window.__webmcpTestRegistry = registry;
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>This application requires JavaScript.</noscript>
+    <div id="app"></div>
+    <script type="module" src="/src/app.mjs"></script>
+  </body>
+</html>
