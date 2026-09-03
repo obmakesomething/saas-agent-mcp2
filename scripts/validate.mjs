@@ -31,7 +31,8 @@ const license = await fs.readFile(path.join(root, "LICENSE"), "utf8");
 if (!webmcpSource.includes("modelContext.registerTool")) {
   errors.push("imperative WebMCP registration is missing");
 }
-if (!index.includes('src="/src/app.mjs"')) errors.push("app module is not loaded");
+if (!index.includes('src="./src/app.mjs"')) errors.push("app module is not loaded");
+if (!index.includes('href="./styles.css"')) errors.push("portable stylesheet path is missing");
 if (!license.includes("MIT License")) errors.push("MIT license is incomplete");
 if (tools.length < 5) errors.push("implementation is too shallow: fewer than 5 tools");
 
