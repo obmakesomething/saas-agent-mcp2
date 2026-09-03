@@ -1,0 +1,20 @@
+{
+  "name": "looproof-webmcp",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "An agent-native product truth surface powered by WebMCP.",
+  "scripts": {
+    "dev": "http-server . -p 4173 -c-1",
+    "test": "node --test",
+    "validate": "node scripts/validate.mjs",
+    "check": "npm run test && npm run validate"
+  },
+  "keywords": [
+    "webmcp",
+    "product-verification",
+    "agentic-web",
+    "evidence-graph"
+  ],
+  "license": "MIT"
+}
