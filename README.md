@@ -2,7 +2,9 @@
 
 LooPROOF is a WebMCP-native proof surface for enterprise product claims. A human and an agent inspect the same claim, trace the same evidence, stage the same local resolution, and see the same verification result.
 
-The app does **not** let an LLM invent a source of truth. Every verdict is derived from a deterministic, provenance-preserving evidence graph. A sandbox patch can reach `STAGED_CONSISTENT_NON_ISSUING`; it can never claim production readiness or `VERIFIED_FIXED`.
+**[Open the live challenge build](https://rawcdn.githack.com/obmakesomething/saas-agent-mcp2/4924d40556441b86a907e2af23a05b4eb6c0675f/index.html)**
+
+The live build is pinned to an immutable Git commit and served over HTTPS with correct JavaScript and CSS content types. The app does **not** let an LLM invent a source of truth. Every verdict is derived from a deterministic, provenance-preserving evidence graph. A sandbox patch can reach `STAGED_CONSISTENT_NON_ISSUING`; it can never claim production readiness or `VERIFIED_FIXED`.
 
 ## Why WebMCP
 
